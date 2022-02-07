@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Reservation</title>
+</head>
+<body>
+<h2>Complete Reservation</h2>
+
+Operating Airline: <td th:text="${flight.operatingAirlines}"></td></br>
+Departure city: <td th:text="${flight.departureCity}"></td></br>
+Arrival city: <td th:text="${flight.arrivalCity}"></td>
+
+<form action="completeReservation" method="post">
+    <pre>
+    <h2>Passenger Details</h2>
+    First name: <input type="text" name="passengerFirstName">
+    Last name: <input type="text" name="passengerLastName">
+    Email: <input type="text" name="passengerEmail">
+    Phone: <input type="text" name="passengerPhone">
+
+    <h2>Card Details</h2>
+    Name on card: <input type="text" name="nameOnCard">
+    Card number: <input type="text" name="cardNumber">
+    Expiry date: <input type="text" name="expirationDate">
+    Security code: <input type="text" name="securityCode">
+
+    <input type="hidden" name="flightId" th:value="${flight.id}">
+    <input type="submit" value="Confirm">
+    </pre>
+</form>
+</body>
+</html>
